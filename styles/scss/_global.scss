@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: $primary;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .app {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    > div {
+      margin: .5rem;
+    }
+  
+    @media (max-width: 720px) {
+      flex-direction: column;
+
+      > div {
+        order: 2;
+      }
+
+      #list-tracks {
+        order: 1;
+        max-width: 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: scroll;
+
+        li {
+          margin: .5rem;
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

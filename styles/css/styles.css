@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #0F0D13;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .app {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+main .app > div {
+  margin: 0.5rem;
+}
+@media (max-width: 720px) {
+  main .app {
+    flex-direction: column;
+  }
+  main .app > div {
+    order: 2;
+  }
+  main .app #list-tracks {
+    order: 1;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: scroll;
+  }
+  main .app #list-tracks li {
+    margin: 0.5rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.player {
+  width: 100%;
+  min-width: 266px;
+  background: #2A2141;
+  border-radius: 10px;
+}
+.player-default {
+  padding: 48px 38px;
+  max-width: 266px;
+}
+.player-header {
+  margin-bottom: 1.5rem;
+}
+.player-header .thumbnail {
+  margin: 0 auto;
+  width: 100%;
+  height: 190px;
+  background: #0F0D13;
+  max-width: 100%;
+}
+.player-header .thumbnail img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+.player-header .titles {
+  margin: 1.5rem 0;
+}
+.player-header .titles strong {
+  font-size: 1.5rem;
+  font-weight: normal;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #E1E1E6;
+}
+.player-header .titles span {
+  font-weight: normal;
+  font-size: 1.12rem;
+  color: #E1E1E6;
+  opacity: 67%;
+}
+.player-body .actions {
+  margin: 0 auto;
+  max-width: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+.player-body .controls {
+  margin-top: 1.5rem;
+  position: relative;
+}
+.player-body .controls .player-track {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.player-body .controls .player-track:hover {
+  cursor: pointer;
+}
+.player-body .controls .player-track::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #d2d2d230;
+}
+.player-body .controls .player-track::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  border-radius: 999px;
+  height: 6px !important;
+  cursor: pointer;
+  background: #E1E1E6;
+  box-shadow: -205px 0px 0 200px #E1E1E6;
+}
+.player-body .controls .info {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #E1E1E6;
+  opacity: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.player-custom {
+  padding: 28px;
+  min-width: 360px;
+  max-width: 360px;
+}
+.player-custom .player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player-custom .player-header .thumbnail {
+  max-width: 85px;
+  min-width: 85px;
+  max-height: 85px;
+  min-height: 85px;
+  margin-right: 1.75rem;
+}
+.player-custom .player-header .titles {
+  margin: 0;
+  width: 100%;
+}
+.player-custom .player-body .actions ~ .hidden {
+  display: none;
+}
+@media (max-width: 360px) {
+  .player-custom {
+    min-width: unset;
+  }
+}
+.player + .player {
+  margin-top: 2rem;
+}
+.player .btn {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player .btn:disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.player .btn:hover {
+  cursor: pointer;
+}
+
+#list-tracks {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#list-tracks li {
+  margin: 0.5rem;
+}
+#list-tracks li button {
+  min-width: 180px;
+  max-width: 180px;
+  text-align: left;
+  background: #2A2141;
+  padding: 1rem;
+  border: 1px solid #2A2141;
+  border-radius: 10px;
+  color: #E1E1E6;
+  transition: 0.2s linear;
+}
+#list-tracks li button:hover {
+  cursor: pointer;
+  border-color: #787878;
+  transition: 0.2s linear;
+}
+#list-tracks li button.active {
+  border-color: #787878;
+}
+#list-tracks li button figure {
+  width: 100%;
+}
+#list-tracks li button figure img {
+  border-radius: 10px;
+  width: 100%;
+}
+#list-tracks li button strong {
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0.75rem 0 0.4rem;
+  display: block;
+  font-size: 1rem;
+  position: relative;
+}
+#list-tracks li button strong::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to left, #2A2141, transparent);
+}
+#list-tracks li button span {
+  opacity: 70%;
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

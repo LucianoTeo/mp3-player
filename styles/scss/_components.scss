@@ -1,0 +1,245 @@
+.player {
+  width: 100%;
+  min-width: 266px;
+  
+  background: $secondary;
+  border-radius: $radius;
+
+  &-default { 
+    padding: 48px 38px;
+    max-width: 266px;
+  }
+
+  &-header {
+    margin-bottom: 1.5rem;
+
+    .thumbnail {
+      margin: 0 auto;
+      width: 100%;
+      height: 190px;
+
+      background: $primary;
+      max-width: 100%;
+      
+      img {
+        border-radius: $radius;
+        max-width: 100%;
+      }
+    }
+
+    .titles {
+      margin: 1.5rem 0;
+
+      strong {
+        font-size: 1.5rem;
+        font-weight: normal;
+        display: block;
+        margin-bottom: .5rem;
+        color: $gray-100;
+      }
+
+      span {
+        font-weight: normal;
+        font-size: 1.12rem;
+        color: $gray-200;
+        opacity: 67%;
+      }
+    }
+  }
+
+  &-body {
+    .actions {
+      margin: 0 auto;
+      max-width: 190px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .controls {
+      margin-top: 1.5rem;
+      position: relative;
+
+      .player-track {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+
+        width: 100%;
+        height: 6px;
+        border-radius: 6px;
+        overflow: hidden;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 6px;
+          border: none;
+          border-radius: 6px;
+          background: #d2d2d230;
+        }
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 10px;
+          border-radius: 999px;
+          height: 6px !important;
+          cursor: pointer;
+          background: $gray-100;
+          box-shadow: -205px 0px 0 200px $gray-100;
+        }
+      }
+
+      .info {
+        margin-top: .5rem;
+        font-size: .9rem;
+        color: $gray-100;
+        opacity: 70%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &-custom {
+    padding: 28px;
+    min-width: 360px;
+    max-width: 360px;
+
+    .player-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .thumbnail {
+        max-width: 85px;
+        min-width: 85px;
+        max-height: 85px;
+        min-height: 85px;
+
+        margin-right: 1.75rem;
+      }
+
+      .titles {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .player-body {
+      .actions ~ .hidden {
+        display: none;
+      }
+    }
+
+    @media (max-width: 360px) {
+      min-width: unset;
+    }
+  }
+
+  & + .player {
+    margin-top: 2rem;
+  }
+
+  .btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+  
+    background: transparent;
+  
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &:disabled {
+      opacity: .2;
+      pointer-events: none;
+    }
+   
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+#list-tracks {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  li {
+    margin: .5rem;
+
+    button {
+      min-width: 180px;
+      max-width: 180px;
+      text-align: left;
+      background: $secondary;
+      padding: 1rem;
+      border: 1px solid $secondary;
+      border-radius: $radius;
+      color: $gray-100;
+
+      transition: .2s linear;
+
+      &:hover {
+        cursor: pointer;
+        border-color: rgb(120, 120, 120);
+        transition: .2s linear;
+      }
+
+      &.active {
+        border-color: rgb(120, 120, 120);
+      }
+
+      figure {
+        width: 100%;
+        
+        img {
+          border-radius: $radius;
+          width: 100%;
+        }
+      }
+
+      strong {
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: .75rem 0 .4rem;
+        display: block;
+        font-size: 1rem;
+
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+
+          width: 40px;
+          height: 100%;
+          background: linear-gradient(to left, $secondary, transparent)
+        }
+      }
+
+      span {
+        opacity: 70%;
+        font-size: .9rem;
+      }
+    }
+  }
+}
