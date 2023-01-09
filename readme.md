@@ -28,7 +28,7 @@
 - (Escape) for quit miniPlayer mode view
 
 **Starting working on this project**
-* The only requirement to customize this project is having<a href="https://sass-lang.com/">SASS</a> installed on your machine and basic knowledges of HTML, CSS and Javascript.
+* The only requirement to customize this project is having <a href="https://sass-lang.com/">SASS</a> installed on your machine and basic knowledges of HTML, CSS and Javascript.
 
 <i>After having SASS installed globally on your machine, run the command above on the project's root folder.</i>
    
