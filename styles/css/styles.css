@@ -32,9 +32,15 @@ main .app > div {
     flex-direction: column;
   }
   main .app > div {
+    width: 100%;
+    margin: 0;
     order: 2;
   }
+  main .app > div > div {
+    margin: 0 auto;
+  }
   main .app #list-tracks {
+    margin-bottom: 1rem;
     order: 1;
     max-width: 100%;
     flex-wrap: nowrap;
@@ -42,7 +48,15 @@ main .app > div {
     overflow: scroll;
   }
   main .app #list-tracks li {
+    min-width: 180px;
     margin: 0.5rem;
+    padding: 0;
+  }
+}
+@media (max-width: 720px) {
+  main {
+    padding: 1rem 0;
+    display: block;
   }
 }
 
@@ -195,6 +209,8 @@ main .app > div {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  max-height: 510px;
+  overflow: auto;
 }
 #list-tracks li {
   margin: 0.5rem;

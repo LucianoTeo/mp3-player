@@ -31,23 +31,37 @@ main {
   
     @media (max-width: 720px) {
       flex-direction: column;
-
       > div {
+        width: 100%;
+        margin: 0;
         order: 2;
+
+        > div {
+          margin: 0 auto;
+        }
       }
 
       #list-tracks {
+        margin-bottom: 1rem;
         order: 1;
+
         max-width: 100%;
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow: scroll;
 
         li {
+          min-width: 180px;
           margin: .5rem;
+          padding: 0;
         }
       }
     }
+  }
+
+  @media (max-width: 720px) {
+    padding: 1rem 0;
+    display: block;
   }
 }
 

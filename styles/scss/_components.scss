@@ -169,8 +169,6 @@
   }
 }
 
-
-
 #list-tracks {
   width: 100%;
   max-width: 600px;
@@ -178,6 +176,9 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+
+  max-height: 510px;
+  overflow: auto;
 
   li {
     margin: .5rem;

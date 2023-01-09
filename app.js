@@ -159,8 +159,10 @@ const playerControlls = {
     const currentTrackId = Math.floor(currenTrack.id)
     const currentTrackIndex = TRACKS.findIndex(track => track.id === currentTrackId)
     const nextTrack = TRACKS[currentTrackIndex + 1];
-    playerControlls.select(nextTrack)
-    playerControlls.play()
+    if (nextTrack) {
+      playerControlls.select(nextTrack)
+      playerControlls.play()
+    }
   },
   prev() {
     const currentTrackId = Math.floor(currenTrack.id)
@@ -177,13 +179,12 @@ const playerControlls = {
         currenTrack.volume = (currenTrack.volume += volumeStep).toFixed(2)
       }
     }
-    x
+
     if (direction === 'down') {
       if (currenTrack.volume !== 0) {
         currenTrack.volume = (currenTrack.volume - volumeStep).toFixed(2)
       }
     }
-
   },
   formmatTimeAudio(time) {
     return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2);
@@ -196,6 +197,10 @@ function setTrackInfo() {
   trackPlayerInputRange.setAttribute('max', currenTrack.duration)
   trackDuration.innerHTML = playerControlls.formmatTimeAudio(currenTrack.duration - currenTrack.currentTime)
   trackCurrentTime.innerHTML = playerControlls.formmatTimeAudio(currenTrack.currentTime)
+
+  if (currenTrack.duration === currenTrack.currentTime) {
+    playerControlls.next()
+  }
 }
 
 function updateTrackInfo() {
