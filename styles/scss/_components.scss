@@ -22,7 +22,8 @@
 
       background: $primary;
       max-width: 100%;
-      
+      border-radius: $radius;
+
       img {
         border-radius: $radius;
         max-width: 100%;
@@ -143,7 +144,7 @@
         min-width: 85px;
         max-height: 85px;
         min-height: 85px;
-        
+
         margin-right: 1.75rem;
       }
       
@@ -244,6 +245,7 @@
 
       figure {
         width: 100%;
+        border-radius: $radius;
         
         img {
           border-radius: $radius;
