@@ -6,7 +6,7 @@ let isPlaying;
 const TRACKS = [
   {
     id: 0,
-    title: 'Babylon Rule',
+    title: 'Babylon Rule Dem',
     subtitle: 'Groundation',
     src: './assets/songs/groundation.mp3',
     thumbnail: './assets/albums/groundation.png',
@@ -46,6 +46,7 @@ const TRACKS = [
     src: './assets/songs/NevaRetiya.mp3',
     thumbnail: './assets/albums/groundation.png',
   },
+
 ]
 
 // tracks list component
@@ -220,8 +221,40 @@ function handlePlayPauseTrack() {
 playerControlls.start()
 playerControlls.select(TRACKS[0])
 
-// accessibilities
+// view mode
+const view = document.querySelector('.player')
+const iconMiniPlayerIcon = document.getElementById('viewMiniIcon')
+const iconWidePlayerIcon = document.getElementById('viewWideIcon')
+const btnViewMode = document.querySelector('.btn-view-mode');
 
+btnViewMode.addEventListener('click', handleViewMode)
+
+const hasViewMode = localStorage.getItem('@MP3player');
+if (hasViewMode) {
+  view.classList.remove('player-default')
+  view.classList.add('player-custom')
+  iconWidePlayerIcon.classList.remove('hidden')
+  iconMiniPlayerIcon.classList.add('hidden')
+}
+
+function handleViewMode() {
+  const isDefaultView = view.classList.contains('player-default');
+  if (isDefaultView) {
+    view.classList.remove('player-default')
+    view.classList.add('player-custom')
+    iconMiniPlayerIcon.classList.add('hidden')
+    iconWidePlayerIcon.classList.remove('hidden')
+    window.localStorage.setItem('@MP3player', 'miniView')
+  } else {
+    window.localStorage.removeItem('@MP3player')
+    view.classList.remove('player-custom')
+    view.classList.add('player-default')
+    iconMiniPlayerIcon.classList.remove('hidden')
+    iconWidePlayerIcon.classList.add('hidden')
+  }
+}
+
+// accessibilities
 if (currenTrack) {
   window.addEventListener('keyup', (event) => {
     if (event.code === "Space") {
@@ -246,6 +279,14 @@ if (currenTrack) {
 
     if (event.code === "ArrowDown") {
       playerControlls.volume('down')
+    }
+
+    if (event.code === "Escape") {
+      view.classList.add('player-default')
+      view.classList.remove('player-custom')
+      iconWidePlayerIcon.classList.add('hidden')
+      iconMiniPlayerIcon.classList.remove('hidden')
+      localStorage.removeItem('@MP3player')
     }
   })
 }

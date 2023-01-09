@@ -14,38 +14,51 @@ ul {
   list-style: none;
 }
 
+.rights {
+  display: block;
+  padding: 1rem 2rem;
+  top: 2rem;
+  text-align: right;
+  color: $gray-100;
+  font-weight: normal;
+  opacity: 70%;
+  font-size: .8rem;
+}
+
+button {
+  background: transparent;
+
+  &:hover {
+    cursor: pointer;
+    svg {
+      filter: drop-shadow( 0 0 5px #FFFFFF90)
+    }
+  }
+}
+
 main {
-  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  
-  .app {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  min-height: 90vh;
 
-    > div {
-      margin: .5rem;
-    }
+  .app {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 .5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   
     @media (max-width: 720px) {
       flex-direction: column;
-      > div {
-        width: 100%;
-        margin: 0;
-        
-        > div {
-          margin: 0 auto;
-        }
-      }
 
       #list-tracks {
-        padding: 0 1rem;
+        width: 100%;
         max-width: 100%;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        overflow: scroll;
+        margin: 1rem 0;
 
         li {
           margin: .5rem;
@@ -61,8 +74,7 @@ main {
   }
 
   @media (max-width: 720px) {
-    padding: 1rem 0;
-    display: block;
+    min-height: 100%;
   }
 }
 
