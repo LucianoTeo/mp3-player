@@ -23,6 +23,6 @@
 
 **Accessibilities key details**
 - (Space) Play and Pause
-- (Arrows right and left) - Prev and Next track
-- (Arrows up and down) - Volume handling
+- (Arrows Right and Left) - Prev and Next track
+- (Arrows Up and Down) - Volume handling
 - (Escape) Quit Miniplayer
