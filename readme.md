@@ -30,7 +30,7 @@
 **Starting working on this project**
 * The only requirement to customize this project is having <a href="https://sass-lang.com/">SASS</a> installed on your machine and basic knowledges of HTML, CSS and Javascript.
 
-<i>After having SASS installed globally on your machine, run the command above on the project's root folder.</i>
+<i>After having SASS installed globally on your machine, clone this repository and run the command above on project root folder.</i>
    
 <pre>
 sass --watch styles/scss/styles.scss styles/css/styles.css
