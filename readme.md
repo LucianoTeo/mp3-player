@@ -22,16 +22,7 @@
 - 100% Responsive
 
 **Accessibilities key details**
-- (Space) for play and pause
-- (Arrows right and left) to go to prev and next songs
-- (Arrows up and down) to handle volumes
-- (Escape) for quit miniPlayer mode view
-
-**Starting working on this project**
-* The only requirement to customize this project is having <a href="https://sass-lang.com/">SASS</a> installed on your machine and basic knowledges of HTML, CSS and Javascript.
-
-<i>After having SASS installed globally on your machine, clone this repository and run the command above on project root folder.</i>
-   
-<pre>
-sass --watch styles/scss/styles.scss styles/css/styles.css
-</pre>
+- (Space) Play and Pause
+- (Arrows right and left) - Prev and Next track
+- (Arrows up and down) - Volume handling
+- (Escape) Quit Miniplayer
