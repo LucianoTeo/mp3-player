@@ -34,23 +34,24 @@ main .app > div {
   main .app > div {
     width: 100%;
     margin: 0;
-    order: 2;
   }
   main .app > div > div {
     margin: 0 auto;
   }
   main .app #list-tracks {
-    margin-bottom: 1rem;
-    order: 1;
+    padding: 0 1rem;
     max-width: 100%;
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow: scroll;
   }
   main .app #list-tracks li {
-    min-width: 180px;
     margin: 0.5rem;
-    padding: 0;
+  }
+  main .app #list-tracks li button {
+    padding: 1rem;
+    min-width: 150px;
+    max-width: 150px;
   }
 }
 @media (max-width: 720px) {
@@ -261,8 +262,21 @@ main .app > div {
   background: linear-gradient(to left, #2A2141, transparent);
 }
 #list-tracks li button span {
+  white-space: nowrap;
   opacity: 70%;
   font-size: 0.9rem;
+  display: block;
+  position: relative;
+}
+#list-tracks li button span::after {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to left, #2A2141, transparent);
 }
 
 /*# sourceMappingURL=styles.css.map */

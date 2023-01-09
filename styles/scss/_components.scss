@@ -238,8 +238,23 @@
       }
 
       span {
+        white-space: nowrap;
         opacity: 70%;
         font-size: .9rem;
+        display: block;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -1rem;
+          top: 0;
+          bottom: 0;
+
+          width: 40px;
+          height: 100%;
+          background: linear-gradient(to left, $secondary, transparent)
+        }
       }
     }
   }
